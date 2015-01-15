@@ -61,10 +61,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uyv-gW-egf" id="x0R-Kc-uuQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7m-yw-Mwo">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7m-yw-Mwo">
                                                     <rect key="frame" x="8" y="10" width="584" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="o3y-qF-jYa" eventType="editingDidEndOnExit" id="khm-TL-rk4"/>
+                                                        <outlet property="delegate" destination="o3y-qF-jYa" id="kwn-5h-JQo"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -83,12 +87,16 @@
                                 <action selector="cancel" destination="o3y-qF-jYa" id="Giw-eF-BPt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="q23-0M-INq">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="q23-0M-INq">
                             <connections>
                                 <action selector="done" destination="o3y-qF-jYa" id="ksS-dq-JGN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="q23-0M-INq" id="bbJ-ek-RYd"/>
+                        <outlet property="textField" destination="j7m-yw-Mwo" id="fHo-om-4mL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6Z-jh-Cmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
