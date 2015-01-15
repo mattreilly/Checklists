@@ -10,8 +10,12 @@ import UIKit
 
 protocol AddItemViewControllerDelegate: class {
     func addItemViewControllerDidCancel(controller: AddItemViewController)
+    
     func addItemViewController(controller: AddItemViewController,
         didFinishAddingItem item: ChecklistItem)
+    
+    func addItemViewController(controller: AddItemViewController,
+        didFinishEditingItem item: ChecklistItem)
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
@@ -21,16 +25,22 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     weak var delegate: AddItemViewControllerDelegate?
     
+    var itemToEdit: ChecklistItem?
+    
     @IBAction func cancel() {
         delegate?.addItemViewControllerDidCancel(self)
     }
     
     @IBAction func done() {
-        let item = ChecklistItem()
-        item.text = textField.text
-        item.checked = false
-        
-        delegate?.addItemViewController(self, didFinishAddingItem: item)
+        if let item = itemToEdit {
+            item.text = textField.text
+            delegate?.addItemViewController(self, didFinishEditingItem: item)
+        } else {
+            let item = ChecklistItem()
+            item.text = textField.text
+            item.checked = false
+            delegate?.addItemViewController(self, didFinishAddingItem: item)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -51,6 +61,12 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         tableView.rowHeight = 44
+        
+        if let item = itemToEdit {
+            title = "Edit Item"
+            textField.text = item.text
+            doneBarButton.enabled = true
+        }
     }
     
     func textField(textField: UITextField,
