@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="ipx-Xk-Hev">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="07a-cn-pRE">
                             <connections>
-                                <segue destination="XbF-Nz-G0K" kind="presentation" id="FDz-O2-lan"/>
+                                <segue destination="XbF-Nz-G0K" kind="presentation" identifier="AddItem" id="FDz-O2-lan"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
