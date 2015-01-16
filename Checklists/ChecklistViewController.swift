@@ -121,11 +121,11 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     }
     
     // implementation of AddItemViewControllerDelegate protocol
-    func addItemViewControllerDidCancel(controller: AddItemViewController) {
+    func addItemViewControllerDidCancel(controller: ItemDetailViewController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func addItemViewController(controller: AddItemViewController,
+    func itemDetailViewController(controller: ItemDetailViewController,
         didFinishEditingItem item: ChecklistItem) {
             
             if let index = find(items, item) {
@@ -138,7 +138,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         
     }
     
-    func addItemViewController(controller: AddItemViewController,
+    func itemDetailViewController(controller: ItemDetailViewController,
         didFinishAddingItem item: ChecklistItem) {
             
             let newRowIndex = items.count
@@ -162,7 +162,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
                 as UINavigationController
             
             let controller = navigationController.topViewController
-                as AddItemViewController
+                as ItemDetailViewController
             
             controller.delegate = self
         } else if segue.identifier == "EditItem" {
@@ -170,7 +170,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
                 as UINavigationController
             
             let controller = navigationController.topViewController
-                as AddItemViewController
+                as ItemDetailViewController
             
             controller.delegate = self
             
