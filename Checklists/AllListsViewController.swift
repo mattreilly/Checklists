@@ -46,13 +46,24 @@ class AllListsViewController: UITableViewController,
                     as? UITableViewCell
             
             if cell == nil {
-                cell = UITableViewCell(style: .Default,
+                cell = UITableViewCell(style: .Subtitle,
                     reuseIdentifier: cellIdentifier)
             }
             
             let checklist = dataModel.lists[indexPath.row]
             cell.textLabel!.text = checklist.name
             cell.accessoryType = .DetailDisclosureButton
+            
+            
+            let count = checklist.countUncheckedItems()
+            
+            if checklist.items.count == 0 {
+                cell.detailTextLabel!.text = "(No Items)"
+            } else if count == 0 {
+                cell.detailTextLabel!.text = "All Done!"
+            } else {
+                cell.detailTextLabel!.text = "\(count)Remaining"
+            }
             
             return cell
     }
@@ -157,6 +168,11 @@ class AllListsViewController: UITableViewController,
             }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -169,5 +185,4 @@ class AllListsViewController: UITableViewController,
             performSegueWithIdentifier("ShowChecklist", sender: checklist)
         }
     }
-    
 }
