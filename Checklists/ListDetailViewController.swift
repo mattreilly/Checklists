@@ -24,6 +24,7 @@ class ListDetailViewController: UITableViewController, UITextViewDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet var iconImageView: UIImageView!
     
     weak var delegate: ListDetailViewControllerDelegate?
     
@@ -64,12 +65,18 @@ class ListDetailViewController: UITableViewController, UITextViewDelegate {
     
     override func tableView(tableView: UITableView,
         willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-            return nil
+            
+            if indexPath.section == 1 {
+                return indexPath
+            } else {
+                return nil
+            }
     }
     
     func textField(textField: UITextField,
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String) -> Bool {
+            
             let oldText: NSString = textField.text
             let newText: NSString =
                 oldText.stringByReplacingCharactersInRange(range,
