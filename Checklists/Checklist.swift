@@ -28,9 +28,13 @@ class Checklist: NSObject, NSCoding {
         aCoder.encodeObject(iconName, forKey: "IconName")
     }
     
-    init(name: String) {
+    convenience init(name: String) {
+        self.init(name: name, iconName: "No Icon")
+    }
+    
+    init(name: String, iconName: String) {
         self.name = name
-        iconName = "No Icon"
+        self.iconName = iconName
         
         super.init()
     }

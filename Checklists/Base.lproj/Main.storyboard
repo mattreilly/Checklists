@@ -148,8 +148,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2YR-Fw-XFY" id="5H4-Ge-gfM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-cf-GLV">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-cf-GLV">
                                                     <rect key="frame" x="523" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="rQO-5b-o0g"/>
+                                                        <constraint firstAttribute="width" constant="36" id="yfa-rt-A3A"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Icon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdq-kV-imZ">
                                                     <rect key="frame" x="8" y="11" width="42" height="21"/>
@@ -158,6 +162,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Z3a-cf-GLV" firstAttribute="top" secondItem="5H4-Ge-gfM" secondAttribute="top" constant="4" id="Qdd-jB-s1Y"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z3a-cf-GLV" secondAttribute="trailing" constant="8" id="btS-CM-IFi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="Ixx-PD-vex" kind="show" identifier="PickIcon" id="amG-x6-V2z"/>
