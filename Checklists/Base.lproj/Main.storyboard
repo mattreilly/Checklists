@@ -160,7 +160,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Ixx-PD-vex" kind="show" id="amG-x6-V2z"/>
+                                            <segue destination="Ixx-PD-vex" kind="show" identifier="PickIcon" id="amG-x6-V2z"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

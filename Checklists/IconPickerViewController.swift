@@ -43,10 +43,19 @@ class IconPickerViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("IconCell")
                 as UITableViewCell
         
-        let iconName = icons[indexPath.row]
-        cell.textLabel!.text = iconName
-        cell.imageView!.image = UIImage(named: iconName)
+            let iconName = icons[indexPath.row]
+            cell.textLabel!.text = iconName
+            cell.imageView!.image = UIImage(named: iconName)
         
-        return cell
+            return cell
+    }
+    
+    override func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+            if let delegate = delegate {
+                let iconName = icons[indexPath.row]
+                delegate.iconPicker(self, didPickIcon: iconName)
+            }
     }
 }
