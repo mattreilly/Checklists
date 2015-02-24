@@ -36,6 +36,10 @@ class ChecklistItem: NSObject, NSCoding {
         super.init()
     }
     
+    convenience init(text: String, checked: Bool) {
+        self.init(text: text, checked: checked)
+    }
+    
     // end of NSCoding protocol
 }
 
