@@ -18,8 +18,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M7O-Tv-hY2" id="he5-DO-Pa0">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zn-K9-Aox">
-                                            <rect key="frame" x="40" y="14" width="485" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zn-K9-Aox">
+                                            <rect key="frame" x="40" y="11" width="493" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -31,6 +31,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="4zn-K9-Aox" secondAttribute="trailing" id="53f-yw-TX4"/>
+                                        <constraint firstItem="4zn-K9-Aox" firstAttribute="leading" secondItem="he5-DO-Pa0" secondAttribute="leading" constant="40" id="TqM-aa-wmP"/>
+                                        <constraint firstAttribute="centerY" secondItem="4zn-K9-Aox" secondAttribute="centerY" id="tL4-Ot-1x1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="XbF-Nz-G0K" kind="presentation" identifier="EditItem" trigger="accessoryAction" id="Ah9-zh-kdy"/>
@@ -70,8 +75,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uyv-gW-egf" id="x0R-Kc-uuQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7m-yw-Mwo">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7m-yw-Mwo">
                                                     <rect key="frame" x="8" y="10" width="584" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="gxM-xS-YHm"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -80,6 +88,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="j7m-yw-Mwo" firstAttribute="top" secondItem="x0R-Kc-uuQ" secondAttribute="top" constant="10" id="YZf-bO-I7D"/>
+                                                <constraint firstItem="j7m-yw-Mwo" firstAttribute="leading" secondItem="x0R-Kc-uuQ" secondAttribute="leading" constant="8" id="hPU-1r-9qD"/>
+                                                <constraint firstAttribute="trailing" secondItem="j7m-yw-Mwo" secondAttribute="trailing" constant="8" id="mbS-B8-iRS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -127,8 +140,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sTF-er-bJt" id="n42-MF-d5b">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGs-ex-CQ1">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGs-ex-CQ1">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="xdJ-60-sfL"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -137,6 +153,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IGs-ex-CQ1" firstAttribute="top" secondItem="n42-MF-d5b" secondAttribute="top" constant="7" id="IP7-Xf-vmg"/>
+                                                <constraint firstItem="IGs-ex-CQ1" firstAttribute="leading" secondItem="n42-MF-d5b" secondAttribute="leading" constant="8" id="f3L-4w-HuU"/>
+                                                <constraint firstAttribute="trailing" secondItem="IGs-ex-CQ1" secondAttribute="trailing" constant="8" id="xPh-W3-DzK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -320,4 +341,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="FDz-O2-lan"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.015686274509803921" green="0.66274509803921566" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
 </document>

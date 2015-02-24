@@ -17,7 +17,6 @@
 		C9843F2C1A55986800685A78 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9843F2B1A55986800685A78 /* ChecklistViewController.swift */; };
 		C9843F2F1A55986800685A78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9843F2D1A55986800685A78 /* Main.storyboard */; };
 		C9843F311A55986800685A78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9843F301A55986800685A78 /* Images.xcassets */; };
-		C9843F341A55986800685A78 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9843F321A55986800685A78 /* LaunchScreen.xib */; };
 		C9843F401A55986800685A78 /* ChecklistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9843F3F1A55986800685A78 /* ChecklistsTests.swift */; };
 		C9E9EA2A1A81E06900CED4B1 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E9EA291A81E06900CED4B1 /* ListDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		C9843F2B1A55986800685A78 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChecklistViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C9843F2E1A55986800685A78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9843F301A55986800685A78 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C9843F331A55986800685A78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C9843F391A55986800685A78 /* ChecklistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9843F3E1A55986800685A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9843F3F1A55986800685A78 /* ChecklistsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsTests.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				C9E9EA291A81E06900CED4B1 /* ListDetailViewController.swift */,
 				C9843F2D1A55986800685A78 /* Main.storyboard */,
 				C9843F301A55986800685A78 /* Images.xcassets */,
-				C9843F321A55986800685A78 /* LaunchScreen.xib */,
 				C9843F271A55986800685A78 /* Supporting Files */,
 			);
 			path = Checklists;
@@ -182,6 +179,7 @@
 				TargetAttributes = {
 					C9843F231A55986800685A78 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = JLGYZH56BT;
 					};
 					C9843F381A55986800685A78 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -214,7 +212,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9843F2F1A55986800685A78 /* Main.storyboard in Resources */,
-				C9843F341A55986800685A78 /* LaunchScreen.xib in Resources */,
 				C9843F311A55986800685A78 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,14 +267,6 @@
 				C9843F2E1A55986800685A78 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C9843F321A55986800685A78 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9843F331A55986800685A78 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -364,10 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Checklists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -375,10 +366,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Checklists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
