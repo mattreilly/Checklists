@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ChecklistItem: NSObject, NSCoding {
     var text = ""
@@ -54,5 +55,29 @@ class ChecklistItem: NSObject, NSCoding {
     }
     
     // end of NSCoding protocol
+    
+    
+    func scheduleNotification() {
+        if shouldRemind && dueDate.compare(NSDate()) !=
+            NSComparisonResult.OrderedAscending {
+                
+                let localNotification = UILocalNotification()
+                
+                localNotification.fireDate = dueDate
+                localNotification.timeZone = NSTimeZone.defaultTimeZone()
+                localNotification.alertBody = text
+                localNotification.soundName =
+                    UILocalNotificationDefaultSoundName
+                localNotification.userInfo = ["ItemID": itemID]
+                
+                UIApplication.sharedApplication().scheduleLocalNotification(
+                    localNotification)
+                
+                println(
+                    "Scheduled notification \(localNotification)" +
+                    " for itemID \(itemID)")
+                
+        }
+    }
 }
 

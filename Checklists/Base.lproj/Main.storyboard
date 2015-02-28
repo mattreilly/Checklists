@@ -117,6 +117,9 @@
                                                         <constraint firstAttribute="height" constant="31" id="824-MP-agc"/>
                                                         <constraint firstAttribute="width" constant="49" id="DVz-KS-qnt"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="shouldRemindToggled:" destination="o3y-qF-jYa" eventType="valueChanged" id="96M-xT-ReV"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
