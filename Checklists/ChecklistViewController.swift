@@ -87,7 +87,6 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
             
             let label = cell.viewWithTag(1000) as UILabel
             label.text = item.text
-        
     }
     
     // implementation of AddItemViewControllerDelegate protocol
